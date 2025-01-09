@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Sorting from "./Sorting";
+import Sorting from "./Sorting"; // Import the sorting component
 
 const FinancialTable = ({ filters }) => {
   const [data, setData] = useState([]);
@@ -10,6 +10,7 @@ const FinancialTable = ({ filters }) => {
     direction: "descending",
   });
 
+  // Fetch the data from the API when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,6 +28,7 @@ const FinancialTable = ({ filters }) => {
     fetchData();
   }, []);
 
+  // Function to handle sorting
   const requestSort = (key) => {
     let direction = "ascending";
     if (sortConfig.key === key && sortConfig.direction === "ascending") {
@@ -35,6 +37,7 @@ const FinancialTable = ({ filters }) => {
     setSortConfig({ key, direction });
   };
 
+  // Sorting logic
   const sortedData = [...data].sort((a, b) => {
     if (a[sortConfig.key] < b[sortConfig.key]) {
       return sortConfig.direction === "ascending" ? -1 : 1;
@@ -63,7 +66,46 @@ const FinancialTable = ({ filters }) => {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full table-auto divide-y divide-gray-200">
-        <Sorting requestSort={requestSort} sortConfig={sortConfig} />
+        <thead>
+          <tr className="bg-gray-100">
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("date")}
+            >
+              Date
+            </th>
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("revenue")}
+            >
+              Revenue
+            </th>
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("netIncome")}
+            >
+              Net Income
+            </th>
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("grossProfit")}
+            >
+              Gross Profit
+            </th>
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("eps")}
+            >
+              EPS
+            </th>
+            <th
+              className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer"
+              onClick={() => requestSort("operatingIncome")}
+            >
+              Operating Income
+            </th>
+          </tr>
+        </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {filteredData.map((item) => (
             <tr key={item.date} className="text-sm">

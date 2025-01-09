@@ -1,67 +1,65 @@
+// Sorting.js
 import React from "react";
 
 const Sorting = ({ requestSort, sortConfig }) => {
-  const getSortClass = (column) => {
-    return sortConfig.key === column
-      ? sortConfig.direction === "ascending"
-        ? "text-blue-600"
-        : "text-red-600"
-      : "text-gray-600";
+  const getClassName = (name) => {
+    if (sortConfig.key === name) {
+      return sortConfig.direction === "ascending" ? "asc" : "desc";
+    }
+    return "";
   };
 
   return (
-    <thead className="bg-gray-100">
-      <tr>
-        <th
-          onClick={() => requestSort("date")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "date"
-          )}`}
-        >
-          Date
-        </th>
-        <th
-          onClick={() => requestSort("revenue")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "revenue"
-          )}`}
-        >
-          Revenue
-        </th>
-        <th
-          onClick={() => requestSort("netIncome")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "netIncome"
-          )}`}
-        >
-          Net Income
-        </th>
-        <th
-          onClick={() => requestSort("grossProfit")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "grossProfit"
-          )}`}
-        >
-          Gross Profit
-        </th>
-        <th
-          onClick={() => requestSort("eps")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "eps"
-          )}`}
-        >
-          EPS
-        </th>
-        <th
-          onClick={() => requestSort("operatingIncome")}
-          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
-            "operatingIncome"
-          )}`}
-        >
-          Operating Income
-        </th>
-      </tr>
-    </thead>
+    <tr>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "date"
+        )}`}
+        onClick={() => requestSort("date")}
+      >
+        Date
+      </th>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "revenue"
+        )}`}
+        onClick={() => requestSort("revenue")}
+      >
+        Revenue
+      </th>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "netIncome"
+        )}`}
+        onClick={() => requestSort("netIncome")}
+      >
+        Net Income
+      </th>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "grossProfit"
+        )}`}
+        onClick={() => requestSort("grossProfit")}
+      >
+        Gross Profit
+      </th>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "eps"
+        )}`}
+        onClick={() => requestSort("eps")}
+      >
+        EPS
+      </th>
+      <th
+        className={`px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer ${getClassName(
+          "operatingIncome"
+        )}`}
+        onClick={() => requestSort("operatingIncome")}
+      >
+        Operating Income
+      </th>
+    </tr>
   );
 };
 

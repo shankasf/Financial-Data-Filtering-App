@@ -24,7 +24,7 @@ const App = () => {
       </header>
 
       <main className="p-6">
-        <Filtering onFilterChange={handleFilterChange} />
+        <Filtering onFilterChange={handleFilterChange} filters={filters} />
         <FinancialTable filters={filters} />
       </main>
     </div>

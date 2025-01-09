@@ -21,6 +21,19 @@ A powerful React-based application for analyzing Apple's financial income statem
 - npm or yarn
 - API Key from Financial Modeling Prep
 
+Installation: 
+# Clone the Repository
+git clone https://github.com/shankasf/Financial-Data-Filtering-App.git
+cd financial-data-filter-app
+
+# Install Dependencies
+npm install
+# or
+yarn install
+
+# Run the Application
+npm start
+
 🌐 Deployment
 Deployed on Vercel: https://financial-data-filter.vercel.app/
 

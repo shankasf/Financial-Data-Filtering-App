@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Sorting from "./Sorting"; // Import the sorting component
 
 const FinancialTable = ({ filters }) => {
   const [data, setData] = useState([]);

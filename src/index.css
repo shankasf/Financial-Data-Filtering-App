@@ -1,53 +1,46 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Your custom styles here */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+/* Table styling using Tailwind */
 table {
-  border-collapse: collapse;
-  width: 100%;
+  @apply min-w-full table-auto border-collapse;
 }
 
 th,
 td {
-  text-align: left;
-  padding: 0.75rem;
+  @apply text-left p-3 border-b border-gray-200;
 }
 
 th {
-  background-color: #f8f8f8;
+  @apply bg-gray-100;
 }
 
 td {
-  background-color: white;
-}
-
-th,
-td {
-  border-bottom: 1px solid #e5e7eb;
+  @apply bg-white;
 }
 
 tr:hover td {
-  background-color: #f3f4f6;
+  @apply bg-gray-100;
 }
 
 @media (max-width: 768px) {
   table {
-    width: 100%;
-    overflow-x: auto;
+    @apply w-full overflow-x-auto;
   }
 }

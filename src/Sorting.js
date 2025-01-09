@@ -1,42 +1,62 @@
 import React from "react";
 
-const Sorting = ({ onSort }) => {
+const Sorting = ({ requestSort, sortConfig }) => {
+  const getSortClass = (column) => {
+    return sortConfig.key === column
+      ? sortConfig.direction === "ascending"
+        ? "text-blue-600"
+        : "text-red-600"
+      : "text-gray-600";
+  };
+
   return (
-    <thead className="bg-gray-50">
+    <thead className="bg-gray-100">
       <tr>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("date")}
+          onClick={() => requestSort("date")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "date"
+          )}`}
         >
           Date
         </th>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("revenue")}
+          onClick={() => requestSort("revenue")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "revenue"
+          )}`}
         >
           Revenue
         </th>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("netIncome")}
+          onClick={() => requestSort("netIncome")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "netIncome"
+          )}`}
         >
           Net Income
         </th>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("grossProfit")}
+          onClick={() => requestSort("grossProfit")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "grossProfit"
+          )}`}
         >
           Gross Profit
         </th>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("eps")}
+          onClick={() => requestSort("eps")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "eps"
+          )}`}
         >
           EPS
         </th>
         <th
-          className="px-4 py-2 text-left cursor-pointer hover:bg-gray-200"
-          onClick={() => onSort("operatingIncome")}
+          onClick={() => requestSort("operatingIncome")}
+          className={`cursor-pointer px-6 py-3 text-left text-sm font-semibold ${getSortClass(
+            "operatingIncome"
+          )}`}
         >
           Operating Income
         </th>

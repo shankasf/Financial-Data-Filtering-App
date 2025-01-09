@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Financial-Data-Filtering-App
+Built a financial data filtering app using data from a single API endpoint. The app will fetch annual income statements for AAPL (Apple) and allow users to filter and analyze key metrics.
+>>>>>>> 30c277d23789087d45426d0db96c3d0b9657c716
